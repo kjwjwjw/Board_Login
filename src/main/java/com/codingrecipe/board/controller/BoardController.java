@@ -1,7 +1,9 @@
 package com.codingrecipe.board.controller;
 
 import com.codingrecipe.board.dto.BoardDTO;
+import com.codingrecipe.board.dto.MemberDTO;
 import com.codingrecipe.board.service.BoardService;
+import com.codingrecipe.board.service.MemberService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -16,16 +18,30 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BoardController {
     private final BoardService boardService;
+    private final MemberService memberService;
 
             @GetMapping("/save")
             public String save() {
                 return"save";
             }
 
+            @GetMapping("/join")
+            public String join() {
+
+                return "join";
+            }
+
             @PostMapping("/save")
             public String save(BoardDTO boardDTO) {
                 System.out.println("boardDTO = "+ boardDTO);
                 boardService.save(boardDTO);
+                return "redirect:/list";
+            }
+
+            @PostMapping("/join")
+            public String join(MemberDTO memberDTO) {
+                System.out.println("memberDTO =" + memberDTO);
+                memberService.join(memberDTO);
                 return "redirect:/list";
             }
 
