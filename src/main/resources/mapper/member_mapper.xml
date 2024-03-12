@@ -7,4 +7,8 @@
             insert into member(userId, userName, userPw)
             values(#{userId}, #{userName}, #{userPw})
         </insert>
+
+        <select id="login" parameterType="member" resultType="member">
+            select * from member where userId = #{userId} and userPw=#{userPw}
+        </select>
 </mapper>

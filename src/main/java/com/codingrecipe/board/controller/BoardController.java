@@ -4,11 +4,13 @@ import com.codingrecipe.board.dto.BoardDTO;
 import com.codingrecipe.board.dto.MemberDTO;
 import com.codingrecipe.board.service.BoardService;
 import com.codingrecipe.board.service.MemberService;
+import jakarta.servlet.http.HttpSession;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -43,6 +45,23 @@ public class BoardController {
                 System.out.println("memberDTO =" + memberDTO);
                 memberService.join(memberDTO);
                 return "redirect:/list";
+            }
+
+            @GetMapping("login")
+            public String loginForm() {
+
+                return "index";
+            }
+
+            @PostMapping("/login")
+            public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
+                boolean loginResult = memberService.login(memberDTO);
+                if(loginResult)  {
+                    session.setAttribute("userId", memberDTO.getUserId());
+                    return "index";
+                } else {
+                    return "index";
+                }
             }
 
             @GetMapping("/list")

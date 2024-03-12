@@ -15,4 +15,15 @@ public class MemberService {
     public void join(MemberDTO memberDTO) {
         memberRepository.join(memberDTO);
     }
+
+
+    public boolean login(MemberDTO memberDTO) {
+        MemberDTO loginMember = memberRepository.login(memberDTO);
+        if ( loginMember != null ) {
+            return true;
+
+        } else {
+            return false;
+        }
+    }
 }
