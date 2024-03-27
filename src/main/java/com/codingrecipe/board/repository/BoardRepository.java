@@ -21,11 +21,11 @@ public class BoardRepository {
         return sql.selectList("Board.findAll");
     }
 
-    public void updateHits(Long id) {
+    public void updateHits(long id) {
         sql.update("Board.updateHits", id);
     }
 
-    public BoardDTO findById(Long id) {
+    public BoardDTO findById(long id) {
         return sql.selectOne("Board.findById", id);
     }
 
@@ -33,7 +33,7 @@ public class BoardRepository {
         sql.update("Board.update", boardDTO);
     }
 
-    public void delete(Long id) {
+    public void delete(long id) {
         sql.delete("Board.delete", id);
 
     }

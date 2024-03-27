@@ -27,11 +27,7 @@ public class BoardController {
                 return"save";
             }
 
-            @GetMapping("/join")
-            public String join() {
 
-                return "join";
-            }
 
             @PostMapping("/save")
             public String save(BoardDTO boardDTO) {
@@ -40,29 +36,7 @@ public class BoardController {
                 return "redirect:/list";
             }
 
-            @PostMapping("/join")
-            public String join(MemberDTO memberDTO) {
-                System.out.println("memberDTO =" + memberDTO);
-                memberService.join(memberDTO);
-                return "redirect:/list";
-            }
 
-            @GetMapping("login")
-            public String loginForm() {
-
-                return "index";
-            }
-
-            @PostMapping("/login")
-            public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
-                boolean loginResult = memberService.login(memberDTO);
-                if(loginResult)  {
-                    session.setAttribute("userId", memberDTO.getUserId());
-                    return "index";
-                } else {
-                    return "index";
-                }
-            }
 
             @GetMapping("/list")
             public String findAll(Model model) {
@@ -73,7 +47,7 @@ public class BoardController {
             }
 
             @GetMapping("/{id}")
-            public String findById(@PathVariable("id") Long id, Model model) {
+            public String findById(@PathVariable("id") long id, Model model) {
                 // 조회수 처리
                     boardService.updateHits(id);
 
@@ -88,7 +62,7 @@ public class BoardController {
 
 
             @GetMapping("/update/{id}")
-            public String update(@PathVariable("id") Long id, Model model) {
+            public String update(@PathVariable("id") long id, Model model) {
                 BoardDTO boardDTO = boardService.findById(id);
                 model.addAttribute("board", boardDTO);
                 return "update";
@@ -103,7 +77,7 @@ public class BoardController {
             }
 
             @GetMapping("/delete/{id}")
-            public String delete(@PathVariable("id") Long id) {
+            public String delete(@PathVariable("id") long id) {
 
                 boardService.delete(id);
 

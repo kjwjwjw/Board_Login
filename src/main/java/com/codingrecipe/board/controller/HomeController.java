@@ -15,6 +15,14 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/index")
+    public String indexForm() {
+
+
+        return "index";
+    }
+
+
 
 
 }

@@ -21,11 +21,11 @@ public class BoardService {
                 return boardRepository.findAll();
         }
 
-        public void updateHits(Long id) {
+        public void updateHits(long id) {
                 boardRepository.updateHits(id);
         }
 
-        public BoardDTO findById(Long id) {
+        public BoardDTO findById(long id) {
 
                 return boardRepository.findById(id);
         }
@@ -35,7 +35,7 @@ public class BoardService {
                 boardRepository.update(boardDTO);
         }
 
-        public void delete(Long id) {
+        public void delete(long id) {
 
                 boardRepository.delete(id);
         }

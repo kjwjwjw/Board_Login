@@ -1,5 +1,6 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<div th:insert="header.html" id="header"></div>
 <head>
   <meta charset="UTF-8">
 </head>
@@ -9,19 +10,21 @@
     <h1>회원가입</h1>
     <div class="form-group">
       <label for="inputEmail4">userId</label>
-      <input type="text" class="form-control" id="inputEmail4" name="userId" placeholder="사용자 아이디">
+      <input type="text" class="form-control" id="inputEmail4" name="user_id" placeholder="사용자 아이디">
     </div>
     <div class="form-group">
       <label for="inputAddress">userName</label>
-      <input type="text" class="form-control" id="inputAddress" name="userName" placeholder="사용자 이름">
+      <input type="text" class="form-control" id="inputAddress" name="Name" placeholder="사용자 이름">
     </div>
     <div class="form-group">
       <label for="inputPassword4">password</label>
-      <input type="password" class="form-control" id="inputPassword4" name="userPw" placeholder="사용자 비밀번호">
+      <input type="password" class="form-control" id="inputPassword4" name="pw" placeholder="사용자 비밀번호">
     </div>
 
     <button type="submit" class="btn btn-primary">가입 완료</button>
   </div>
 </form>
 </body>
-</html>
+
+<!-- Footer-->
+<div th:insert="footer.html" id="footer"></div>

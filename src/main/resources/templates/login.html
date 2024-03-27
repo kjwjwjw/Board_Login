@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<div th:insert="header.html" id="header"></div>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/login">
+    <div class="container">
+        <h1>로그인</h1>
+        <div class="form-group">
+            <label for="user_Id">userId</label>
+            <input type="text" class="form-control" id="user_id" name="user_id" placeholder="사용자 아이디">
+        </div>
+        <div class="form-group">
+            <label for="pw">password</label>
+            <input type="password" class="form-control" id="pw" name="pw" placeholder="사용자 비밀번호">
+        </div>
+
+        <button type="submit" class="btn btn-primary">로그인</button>
+    </div>
+</form>
+
+</body>
+
+<!-- Footer-->
+<div th:insert="footer.html" id="footer"></div>

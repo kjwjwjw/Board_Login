@@ -10,13 +10,13 @@ import lombok.ToString;
 @ToString
 public class MemberDTO {
 
-    private Long id;
+    private int idx;
 
-    private String userId;
+    private String user_id;
 
-    private String userName;
+    private String name;
 
-    private String userPw;
+    private String pw;
 
 
 }

@@ -4,11 +4,11 @@
 
 <mapper namespace="Member">
         <insert id="join" parameterType="member">
-            insert into member(userId, userName, userPw)
-            values(#{userId}, #{userName}, #{userPw})
+            insert into member(user_Id, name, pw)
+            values(#{user_Id}, #{name}, #{pw})
         </insert>
 
         <select id="login" parameterType="member" resultType="member">
-            select * from member where userId = #{userId} and userPw=#{userPw}
+            select * from member where user_id = #{user_id} and pw=#{pw}
         </select>
 </mapper>
