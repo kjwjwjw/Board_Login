@@ -3,6 +3,7 @@ package com.codingrecipe.board.controller;
 
 import com.codingrecipe.board.dto.MemberDTO;
 import com.codingrecipe.board.service.MemberService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -45,6 +46,14 @@ public class MemberController {
         } else {
             return "index";
         }
+    }
+
+    @PostMapping(value = "/logout")
+    public String logout(HttpSession session) {
+
+        session.invalidate();
+
+        return "index";
     }
 
 

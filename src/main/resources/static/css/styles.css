@@ -3764,7 +3764,7 @@ textarea.form-control-lg {
   display: flex;
   flex-wrap: inherit;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
@@ -11077,7 +11077,7 @@ footer a:hover, footer a:active, footer a:focus {
 }
 
 .masthead {
-  background-color: #f8f9fa;
+  background-color: #2937f0;
   padding-top: 9.5rem;
   padding-bottom: 5rem;
 }

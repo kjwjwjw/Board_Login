@@ -18,12 +18,20 @@
 <body>
 <!-- Navigation-->
 <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-        <a class="navbar-brand" href="/index">Start Bootstrap</a>
-        <a class="btn btn-primary" href="/join">Sign Up</a>
-        <a class="btn btn-primary" href="/login">login</a>
-        <tr th:each="name : ${name}">
+    <div class="container" >
+            <th:block th:if="${session.user_id == null}">
+                <a class="navbar-brand" href="/index">Start Bootstrap</a>
+                <a class="btn btn-primary" href="/join">Sign Up</a>
+                <a class="btn btn-primary" href="/login">login</a>
+            </th:block>
+
+            <th:block th:if="${session.user_id != null}">
+
+                <a class="navbar-brand" href="/index">Start Bootstrap</a>
+                <span th:text="${session.user_id}"> USER_ID 님 환영합니다 </span>
+            </th:block>
+
+
 
     </div>
-
 </nav>
