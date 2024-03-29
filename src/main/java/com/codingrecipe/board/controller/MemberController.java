@@ -6,10 +6,10 @@ import com.codingrecipe.board.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
@@ -50,11 +50,23 @@ public class MemberController {
 
     @PostMapping(value = "/logout")
     public String logout(HttpSession session) {
-
+        session.removeAttribute("user_id");
         session.invalidate();
 
-        return "index";
+        return "redirect:/";
     }
+
+    @GetMapping("/login")
+    public String login(Model model) {
+        model.addAttribute("title", "");
+        return "pages/login/loginPage";
+    }
+
+
+
+
+
+
 
 
 }

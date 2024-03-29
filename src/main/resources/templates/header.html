@@ -29,6 +29,10 @@
 
                 <a class="navbar-brand" href="/index">Start Bootstrap</a>
                 <span th:text="${session.user_id}"> USER_ID 님 환영합니다 </span>
+
+                <form method="post" action="/logout">
+                    <button type="submit" class="btn btn-primary">로그아웃</button>
+                </form>
             </th:block>
 
 

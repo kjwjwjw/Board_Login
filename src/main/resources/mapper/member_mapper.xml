@@ -4,8 +4,8 @@
 
 <mapper namespace="Member">
         <insert id="join" parameterType="member">
-            insert into member(user_Id, name, pw)
-            values(#{user_Id}, #{name}, #{pw})
+            insert into member(user_id, name, pw)
+            values(#{user_id}, #{name}, #{pw})
         </insert>
 
         <select id="login" parameterType="member" resultType="member">

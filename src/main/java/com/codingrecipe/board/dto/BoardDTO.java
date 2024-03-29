@@ -10,6 +10,8 @@ import lombok.ToString;
 @ToString
 public class BoardDTO {
 
+    private int idx;
+
     private long id;
 
     private String boardWriter;
