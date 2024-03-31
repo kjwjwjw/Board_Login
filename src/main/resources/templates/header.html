@@ -23,16 +23,18 @@
                 <a class="navbar-brand" href="/index">Start Bootstrap</a>
                 <a class="btn btn-primary" href="/join">Sign Up</a>
                 <a class="btn btn-primary" href="/login">login</a>
+                <a class="btn btn-primary" href="/map">Map</a>
             </th:block>
 
             <th:block th:if="${session.user_id != null}">
 
-                <a class="navbar-brand" href="/index">Start Bootstrap</a>
-                <span th:text="${session.user_id}"> USER_ID 님 환영합니다 </span>
+                <a class="navbar-brand" href="/index">Start Bootstrap  </a>
+                <span th:text="${session.user_id}  "> USER_ID 님 환영합니다 </span>
 
-                <form method="post" action="/logout">
+                 <form method="post" action="/logout">
                     <button type="submit" class="btn btn-primary">로그아웃</button>
                 </form>
+                <a class="btn btn-primary" href="/map">Map</a>
             </th:block>
 
 

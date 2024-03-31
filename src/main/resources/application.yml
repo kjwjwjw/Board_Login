@@ -15,3 +15,9 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   config-location: classpath:mybatis-config.xml
 
+oauth:
+  kakao:
+    client-id: e3dba092a3b23f43340035247ba71992
+    url:
+      auth: https://kauth.kakao.com
+      api: https://kapi.kakao.com
