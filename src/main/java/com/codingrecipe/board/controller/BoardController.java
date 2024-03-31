@@ -36,6 +36,12 @@ public class BoardController {
                 return "redirect:/list";
             }
 
+            @GetMapping("/map")
+            public String map() {
+
+                return "map";
+            }
+
 
 
             @GetMapping("/list")
